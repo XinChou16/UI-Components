@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tabs样例</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrap {
+      display: flex;
+      /* border: 1px solid #3cc; */
+      background-color: rgb(252, 245, 245);
+      flex-direction: column;
+    }
+
+    .tabs {
+      width: 300px;
+      margin: 10px;
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+
+    .tabs>ol {
+      color: #3cc;
+      font-size: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* tabs-bar */
+
+    .tabs>ol.tabs-bar {
+      display: flex;
+      text-align: center;
+    }
+
+    .tabs>ol.tabs-bar>li {
+      box-sizing: border-box;
+      min-width: 100px;
+      padding: 10px;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #dddedd;
+    }
+
+    .tabs>ol.tabs-bar>li:hover {
+      cursor: pointer;
+    }
+
+    .tabs>ol.tabs-bar>li.active {
+      border-color: #dddedd;
+      border-bottom: 0;
+      border-radius: 5px 5px 0 0;
+    }
+
+    /* tabs-content */
+
+    .tabs>ol.tabs-content {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-top: 0;
+    }
+
+    .tabs>ol.tabs-content>li {
+      display: none;
+    }
+
+    .tabs>ol.tabs-content>li.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="tabs userDefine">
+      <ol class="tabs-bar">
+        <li>tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+      </ol>
+      <ol class="tabs-content">
+        <li>content1conten1</li>
+        <li>content2</li>
+        <li>content3</li>
+      </ol>
+    </div>
+    <div class="tabs userDefine">
+      <ol class="tabs-bar">
+        <li>tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+      </ol>
+      <ol class="tabs-content">
+        <li>content1conten1</li>
+        <li>content2</li>
+        <li>content3</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="../components/tabs.js"></script>
+  <script>
+    new Tabs({
+      element: $('.tabs'),
+    })
+  </script>
+</body>
+
+</html>
