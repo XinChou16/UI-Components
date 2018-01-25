@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>翻页组件</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .pager {
+      display: flex;
+      margin-left: 400px;
+    }
+
+    .pager>nav {
+      display: flex;
+      align-items: center;
+      /* border: 1px solid cyan; */
+    }
+
+    .pager>nav>button {
+      font: inherit;
+      padding: 0 .3em;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 4px;
+    }
+
+    .pager>nav>ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pager>nav>ol[data-role="pageNumbers"] {
+      display: flex;
+    }
+
+    .pager>nav>ol[data-role="pageNumbers"]>li {
+      border: 1px solid #ddd;
+      padding: 0 .3em;
+      min-width: 1.5em;
+    }
+
+    .pager>nav>ol[data-role="pageNumbers"]>li:hover {
+      cursor: pointer;
+    }
+
+    .pager>nav>ol[data-role="pageNumbers"]>li.active {
+      cursor: default;
+      border-color: cyan;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>不改变URL的分页器</p>
+    <div class="pager">
+    </div>
+  </div>
+  <!-- <nav>
+    <button class="first">首页</button>
+    <button class="prev">上一页</button>
+    <ol data-role="pageNumbers">
+      <li data-page="1">
+        <span>1</span>
+      </li>
+      <li data-page="1">
+        <span>2</span>
+      </li>
+      <li data-page="1">
+        <span>3</span>
+      </li>
+      <li data-page="1">
+        <span>4</span>
+      </li>
+    </ol>
+    <button class="next">下一页</button>
+    <button class="last">末页</button>
+  </nav> -->
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="../components/pager.js"></script>
+  <script>
+    let pagers = $('.pager');
+    new Pager({
+      element: pagers,
+      currentPage: 1,
+      totalPages: 20
+    })
+  </script>
+</body>
+
+</html>
