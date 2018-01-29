@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>全屏滚动组件</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    .page{
+      height: 100vh;
+    }
+    section{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+    section:nth-child(1){
+      background: #ccc;
+    }
+    section:nth-child(2){
+      background: #ddd;
+    }
+    section:nth-child(3){
+      background: #eee;
+    }
+    section:nth-child(4){
+      background: #bbb;
+    }
+  </style>
+</head>
+<body>
+   <div class="page">
+     <section>
+       <div class="circle">1</div>
+     </section>
+     <section>
+       <div class="circle">2</div>
+     </section>
+     <section>
+       <div class="circle">3</div>
+     </section>
+     <section>
+       <div class="circle">4</div>
+     </section>
+   </div>
+  
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="../components/fullpage.js"></script>
+</body>
+</html>

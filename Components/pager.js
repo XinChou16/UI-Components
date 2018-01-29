@@ -58,7 +58,7 @@
     let start1 = Math.max(currentPage - visiblePage/2, 1); // 当前页小于中间的页数，渲染的页面范围从第一页开始
     let end1 = Math.min(start1+visiblePage-1, totalPages); // 结束页未达到总的页数，根据start+visibilePage来计算
     let end2 = Math.min(currentPage+ visiblePage/2-1, totalPages); // 结束页超过总的页数，取总的页数的值
-    let start2 = Math.max(end2-visiblePage+1,1); // 结束页超过总页数，根据end-visiblePage来计算
+    let start2 = Math.max(end2-visiblePage+1,1); // 结束页超过总页数，起始页根据end-visiblePage来计算
     let start = Math.min(start1, start2);
     let end = Math.max(end1, end2)
     console.log(`${start}-${end}页`);
@@ -119,6 +119,11 @@
 
   changePage(page) {
     this.options.currentPage = page;
+    // let search = '?page=';
+    // search += page;
+    // console.log(search);
+    // location.search = encodeURIComponent(search);
+    // this.options.element.dispatchEvent(new CustomEvent('pageChange', { detail: { page } }))
     // render
     this._checkPageBtn();
     let $newNumber = this._generatePage(this.options.visiblePage);
